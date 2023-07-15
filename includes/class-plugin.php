@@ -679,8 +679,8 @@ class Plugin {
      * @return void
      */
     public function show_admin_notices() {
-        $this->pro_notice();
-        $this->wc_pro_notice();
+        //$this->pro_notice();
+        //$this->wc_pro_notice();
 
         // Only show admin notices to users with the right capability.
         if ( ! $this->current_user_can_manage_redis() ) {
@@ -1106,6 +1106,7 @@ HTML;
      */
     public function pro_notice() {
         $screen = get_current_screen();
+        return;
 
         if ( ! isset( $screen->id ) ) {
             return;
@@ -1164,6 +1165,7 @@ HTML;
      * @return void
      */
     public function wc_pro_notice() {
+        return;
         if ( defined( 'RedisCachePro\Version' ) || defined( 'ObjectCachePro\Version' ) ) {
             return;
         }
